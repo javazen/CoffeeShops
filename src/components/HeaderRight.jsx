@@ -33,7 +33,6 @@ const DesktopNavigation = (props) => {
     <nav {...props}>
       <ul className='flex rounded-md bg-white/90 px-3 text-sm font-medium'>
       <NavItem href={'/about'}>About</NavItem>
-      <NavItem href={'/contact'}>Contact</NavItem>
       </ul>
     </nav>
   )
