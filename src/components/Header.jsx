@@ -4,10 +4,10 @@ import HeaderRight from './HeaderRight'
 
 const Header = () => {
   return (
-    <div className='flex justify-between'>
+    <header className='flex flex-row flex-no-wrap justify-between p-10'>
       <HeaderLeft />
       <HeaderRight />
-    </div>
+    </header>
   )
 }
 
