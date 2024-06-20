@@ -1,12 +1,15 @@
 import FeaturedPosts from "@/components/FeaturedPosts";
-import Image from "next/image";
+import { getAllPosts } from "@/lib/post";
 
-export default function Home() {
+export default async function Home() {
+  let featuredPosts = (await getAllPosts()).slice(0,3);
+  console.log(featuredPosts)
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
-        <FeaturedPosts />
+        <FeaturedPosts posts={featuredPosts}/>
       </div>
     </main>
   );
 }
+
