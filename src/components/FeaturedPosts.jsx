@@ -1,12 +1,22 @@
-import { sortPosts } from '@/lib/utils';
+import Link from 'next/link';
 import React from 'react'
 
 const FeaturedPosts = ({posts}) => {
-  // const sortedPosts = sortPosts(posts);
-  // console.log(sortedPosts)
+  console.log(posts)
 
   return (
-    <div>FeaturedPosts</div>
+    <div>
+      <h2>Featured Posts</h2>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.slug}>
+            <Link href={`/posts/${post.slug}`}>
+              {post.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
