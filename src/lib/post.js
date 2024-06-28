@@ -10,11 +10,11 @@ export async function getAllPosts() {
 }
 
 export async function importPost(postFilename) {
+    // let fn = `./src/app/posts/${postFilename}`;
     let {post} = (await import(`../app/posts/${postFilename}`));
-    console.log(postFilename);
+    console.log(post);
     return {
         slug: postFilename.replace(/(\/page)?\.mdx$/, ""),
-        title: 'title goes here',
         ...post
     }
 }
