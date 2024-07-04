@@ -2,7 +2,8 @@ import Link from 'next/link';
 import React from 'react'
 
 const FeaturedPosts = ({posts}) => {
-  console.log(posts)
+  // console.log(posts[0].slug);
+  // debugger;
 
   return (
     <div>
