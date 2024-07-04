@@ -1,20 +1,35 @@
 import { glob } from "fast-glob";
+import fs from "fs/promises";
+import matter from "gray-matter";
+import path from "path";
+import { cache } from "react";
 
-export async function getAllPosts() {
+export async function getPost(slug) {
+    const posts = await getAllPosts()
+    return posts.find((post) => post.slug === slug)
+}
+  
+export const getAllPosts = cache(async () => {
+    // const postFilenames = await fs.readdir('./posts/');
     let postFilenames = await glob("*/page.mdx", {
         cwd: "./src/app/posts",
     });
-    let posts = await Promise.all(postFilenames.map(importPost));
-    return posts;
-    // return articles.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
-}
 
-export async function importPost(postFilename) {
-    // let fn = `./src/app/posts/${postFilename}`;
-    let {post} = (await import(`../app/posts/${postFilename}`));
-    console.log(post);
-    return {
-        slug: postFilename.replace(/(\/page)?\.mdx$/, ""),
-        ...post
-    }
-}
+  
+    return Promise.all(
+        postFilenames
+        .map(async (fileName) => {
+          const filePath = `./src/app/posts/${fileName}`
+
+          const postContent = await fs.readFile(filePath).then((data) => data.toString())
+          const { data, content } = matter(postContent)
+  
+        //   if (data.published === false) {
+        //     return null
+        //   }
+
+          return { ...data, body: content, slug: fileName.replace('/page.mdx', '') };
+        })
+    )
+  })
+  
