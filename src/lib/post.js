@@ -21,8 +21,9 @@ export const getAllPosts = cache(async () => {
         .map(async (fileName) => {
           const filePath = `./src/app/posts/${fileName}`
 
-          const postContent = await fs.readFile(filePath).then((data) => data.toString())
+          const postContent = await fs.readFile(filePath)
           const { data, content } = matter(postContent)
+          console.log(data)
   
         //   if (data.published === false) {
         //     return null
