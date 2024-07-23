@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
+import PostCard from './PostCard';
 
 const FeaturedPosts = ({posts}) => {
   // console.log(posts[0].slug);
@@ -11,9 +12,11 @@ const FeaturedPosts = ({posts}) => {
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
+            {
             <Link href={`/posts/${post.slug}`}>
-              {post.title}
+              <PostCard post={post} />
             </Link>
+            }
           </li>
         ))}
       </ul>
