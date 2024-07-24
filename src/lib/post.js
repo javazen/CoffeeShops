@@ -23,7 +23,7 @@ export const getAllPosts = cache(async () => {
 
           const postContent = await fs.readFile(filePath)
           const { data, content } = matter(postContent)
-          console.log(data)
+          // console.log(data)
   
         //   if (data.published === false) {
         //     return null

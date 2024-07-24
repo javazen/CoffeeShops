@@ -5,13 +5,11 @@ const PostCard = ({post}) => {
     <div>
         <img src="{post.image}" alt="postCardImage" />
         <div>
-            <h2>{post.title}</h2>
+            <h2 className='text-lg'>{post.title}</h2>
             <p>{post.description}</p>
         </div>
         <div>
-            // post date
-            <h2> 📅{post.updatedAt}</h2>
-            // post readTime
+            <h2 className='text-sm'> 📅{post.updatedAt}</h2>
         </div>
     </div>
   )
