@@ -2,8 +2,8 @@ import React from 'react'
 
 const PostCard = ({post}) => {
   return (
-    <div>
-        <img src="{post.image}" alt="postCardImage" />
+    <div className='flex flex-col flex-auto'>
+        <img src={post.image} alt="postCardImage" />
         <div>
             <h2 className='text-lg'>{post.title}</h2>
             <p>{post.description}</p>
