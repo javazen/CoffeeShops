@@ -3,7 +3,9 @@ import React from 'react'
 const PostCard = ({post}) => {
   return (
     <div className='flex flex-col flex-auto'>
-        <img src={post.image} alt="postCardImage" />
+        <div className='items-center justify-center'>
+          <img src={post.image} alt="postCardImage" width="320" />
+        </div>
         <div>
             <h2 className='text-lg'>{post.title}</h2>
             <p>{post.description}</p>
