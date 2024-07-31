@@ -8,11 +8,7 @@ const FeaturedPosts = ({posts}) => {
 
   return (
     <div>
-      <h2 className='text-xl p-12'>Featured Posts</h2>
-
-
-
-
+      <h2 className='text-xl p-12 text-center'>Featured Posts</h2>
 
       <ul className='flex gap-4'>
         {posts.map((post) => (

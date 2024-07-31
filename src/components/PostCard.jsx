@@ -2,8 +2,8 @@ import React from 'react'
 
 const PostCard = ({post}) => {
   return (
-    <div className='flex flex-col flex-auto'>
-        <div className='items-center justify-center'>
+    <div>
+        <div>
           <img src={post.image} alt="postCardImage" width="320" />
         </div>
         <div>
