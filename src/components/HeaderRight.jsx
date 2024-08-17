@@ -40,7 +40,7 @@ const DesktopNavigation = (props) => {
 
 const HeaderRight = () => {
   return (
-    <div className='flex flex-row items-center'>
+    <div className='p-1'>
       <DesktopNavigation className='pointer-events-auto block'/>
       {/* <DesktopNavigation className='pointer-events-auto hidden md:block'/> */}
       </div>

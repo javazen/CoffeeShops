@@ -4,7 +4,7 @@ import HeaderRight from './HeaderRight'
 
 const Header = () => {
   return (
-    <header className='flex flex-row flex-no-wrap justify-between p-10'>
+    <header className='w-full p-4 px-10 flex flex-nowrap justify-between'>
       <HeaderLeft />
       <HeaderRight />
     </header>
