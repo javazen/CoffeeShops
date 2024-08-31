@@ -8,9 +8,9 @@ const FeaturedPosts = ({posts}) => {
 
   return (
     <div>
-      <h2 className='text-xl p-12 text-center'>Featured Posts</h2>
+      <h2 className='text-2xl p-10 text-center'>Featured Posts</h2>
 
-      <ul className='flex gap-4'>
+      <ul className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6'>
         {posts.map((post) => (
           <li key={post.slug}>
             {
